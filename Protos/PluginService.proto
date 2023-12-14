@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pluginService;
+option go_package = "protogen/";
+
+service RouteDefinition {
+  rpc StreamHello(StreamHelloRequest) returns (stream StreamHelloReply) {}
+}
+
+message StreamHelloRequest {
+  int32 times = 1;
+}
+
+message StreamHelloReply {
+  string message = 1;
+}
